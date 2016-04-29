@@ -1,0 +1,32 @@
+<?php
+/** @var Codedge_Catalog_Block_Category_View $this */
+/** @var Mage_Catalog_Model_Resource_Category_Collection $_categoriesCollection */
+$category = $this->getCurrentCategory();
+$_categoriesCollection = $category->getCollection()
+    ->addAttributeToSelect(array('name','thumbnail'))
+    ->addAttributeToFilter('is_active', 1)
+    ->addIdFilter($category->getChildren())
+    ->addOrderField('position');
+?>
+
+<?php $_collectionSize = $_categoriesCollection->count() ?>
+<?php $_columnCount = 3; ?>
+<?php $i=0; foreach ($_categoriesCollection as $_category): /** @var Codedge_Catalog_Model_Catalog_Category $_category */?>
+    <?php if ($i++%$_columnCount==0): ?>
+        <ul class="categories-grid">
+    <?php endif ?>
+    <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
+        <a href="<?php echo $_category->getUrl(); ?>" title="" class="category-image">
+            <img src="<?php echo $_category->getResizedThumbnail(230,230); ?>" width="230" height="230" alt="" />
+        </a>
+        <h2 class="category-name">
+            <a href="<?php echo $_category->getUrl() ?>" title="<?php echo $this->stripTags($_category->getName(), null, true) ?>">
+                <?php echo $_category->getName(); ?>
+            </a>
+        </h2>
+    </li>
+    <?php if ($i%$_columnCount==0 || $i==$_collectionSize): ?>
+        </ul>
+    <?php endif ?>
+<?php endforeach ?>
+<script type="text/javascript">decorateGeneric($$('ul.categories-grid'), ['odd','even','first','last'])</script>

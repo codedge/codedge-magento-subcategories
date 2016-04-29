@@ -1,0 +1,7 @@
+{
+  "name": "codedge/magento-subcategories",
+  "license": ["MIT"],
+  "type": "magento-module",
+  "description": "Provide a configuration to show subcategories on category pages for Magento.",
+  "homepage": "https://github.com/codedge/codedge-magento-subcategories"
+}

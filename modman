@@ -1,0 +1,6 @@
+src/app/code/local/Codedge/Catalog/                                                         app/code/local/Codedge/Catalog/
+src/app/design/frontend/base/default/layout/codedge_catalog.xml                             app/design/frontend/base/default/layout/codedge_catalog.xml
+src/app/design/frontend/base/default/template/catalog/category/view/subcategories.phtml     app/design/frontend/base/default/template/catalog/category/view/subcategories.phtml
+src/app/etc/modules/Codedge_Catalog.xml                                                     app/etc/modules/Codedge_Catalog.xml
+src/app/locale/de_DE/*                                                                      app/locale/de_DE/
+src/app/locale/de_AT/*                                                                      app/locale/de_AT/
