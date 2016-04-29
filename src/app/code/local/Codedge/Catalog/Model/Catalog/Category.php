@@ -4,13 +4,17 @@ class Codedge_Catalog_Model_Catalog_Category extends Mage_Catalog_Model_Category
 {
     /**
      * New display mode for showing subcategories
+     * @var string
      */
     const DM_SUBCATEGORY = 'SUBCATEGORY';
 
     /**
+     * Creates a resized image of the categories thumbnail image
+     *
      * @param int $width
      * @param int $height
      * @param int $quality
+     *
      * @return bool|string
      */
     public function getResizedThumbnail($width=130, $height=130, $quality=100)
